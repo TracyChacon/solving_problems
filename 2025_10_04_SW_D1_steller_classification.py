@@ -22,19 +22,19 @@
 def classification(temp: int) -> str:
 
     match temp:
-        case kevin if kevin >= 30000:
+        case kelvin if kelvin >= 30000:
             return "O" 
-        case kevin if 10000 <= kevin <= 29999:
+        case kelvin if 10000 <= kelvin <= 29999:
             return "B" 
-        case kevin if 7500 <= kevin <= 9999:
+        case kelvin if 7500 <= kelvin <= 9999:
             return "A" 
-        case kevin if 6000 <= kevin <= 7499:
+        case kelvin if 6000 <= kelvin <= 7499:
             return "F" 
-        case kevin if 5200 <= kevin <= 5999:
+        case kelvin if 5200 <= kelvin <= 5999:
             return "G" 
-        case kevin if 3700 <= kevin <= 5199:
+        case kelvin if 3700 <= kelvin <= 5199:
             return "K" 
-        case kevin if 0 <= kevin <= 3699:
+        case kelvin if 0 <= kelvin <= 3699:
             return "M" 
         case _:
             return "Error: Something went wrong somewhere."
