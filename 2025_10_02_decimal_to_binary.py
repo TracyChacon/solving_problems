@@ -7,5 +7,6 @@ def to_binary(decimal: int) -> str:
 
     return binary_string
 
-# print(to_binary(12))
-print(to_binary(5))
+if __name__ == "__main__":
+    # print(to_binary(12))
+    print(to_binary(5))
