@@ -23,7 +23,9 @@ def send_message(route: list) -> float:
     TOTAL_TRANSMISSION_DELAY_SEC = (len(route) - 1) * 0.5
     TOTAL_DISTANCE_KM = sum(route)
     
-    return round((TOTAL_DISTANCE_KM/ MESSAGE_TRAVEL_TIME_KM_PER_SEC  + TOTAL_TRANSMISSION_DELAY_SEC), 4)
+    time = TOTAL_DISTANCE_KM / MESSAGE_TRAVEL_TIME_KM_PER_SEC  + TOTAL_TRANSMISSION_DELAY_SEC
+    
+    return round(time, 4)
 
 if __name__ == "__main__":
     print(send_message([300000, 300000]))
