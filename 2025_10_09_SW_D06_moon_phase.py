@@ -32,8 +32,6 @@ def moon_phase(date_string: str) -> str:
             return "Waning"
         case _:
             return "Error: Something went wrong."
-
-    
     
 
 if __name__ == "__main__":
