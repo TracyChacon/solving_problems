@@ -13,12 +13,12 @@
 def launch_fuel(payload: int) -> float:
     FUEL_RATIO = 0.2
     payload_mass_kg = payload
-    total_additional_fuel_kg = 0
+    total_fuel_kg = 0
     while payload_mass_kg > 1:
         payload_mass_kg *= FUEL_RATIO
-        total_additional_fuel_kg += payload_mass_kg
+        total_fuel_kg += payload_mass_kg
 
-    return round(total_additional_fuel_kg, 1)
+    return round(total_fuel_kg, 1)
 
 
 if __name__ == "__main__":
@@ -28,7 +28,3 @@ if __name__ == "__main__":
     print(launch_fuel(500))
     # should return 60.7
     print(launch_fuel(243))
-    # should return 2749.8
-    print(launch_fuel(11000))
-    # should return 1553.4
-    print(launch_fuel(6214))

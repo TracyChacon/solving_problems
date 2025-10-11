@@ -30,16 +30,13 @@ def hex_char_to_dec_int(string: str) -> int:
     return hexadecimal.index(string)
 
 def hex_to_decimal(hex: str) -> int:
-    print(f"Hex: {hex}")
     BASE = 16
     position = len(hex) - 1
     accumulator = 0
    
     for weight in range(len(hex)):
         decimal_int = hex_char_to_dec_int(hex[position])
-        if not decimal_int == 0:
-
-            accumulator += decimal_int * BASE**weight
+        accumulator += decimal_int * BASE**weight
         position -= 1
     return accumulator
 
