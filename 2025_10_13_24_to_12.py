@@ -12,10 +12,9 @@ def to_12(time: str) -> str:
     meridiem = ""
     time_24_int = int(time)
     hour = time_24_int // 100
-    minute = time_24_int % 100
+    minute = time[2:]
 
-    if minute < 10:
-        minute = f"0{minute}"
+   
 
     if AM_START_DELIMITER <= time_24_int <= AM_END_DELIMITER:
         meridiem = "AM"
@@ -39,3 +38,4 @@ if __name__ == "__main__":
     print(to_12("1146"))
     print(to_12("0030"))
     print(to_12("0009"))
+    print(to_12("0000"))
