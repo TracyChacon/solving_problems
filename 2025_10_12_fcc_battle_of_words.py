@@ -21,34 +21,58 @@ def points_for_letter(char: str) -> int:
     else:
         return 0
     
+def points_for_word(word: str) -> int:
+    return sum(points_for_letter(char) for char in word)
 
-def battle(our_team: str, opponent: str) -> str : 
-    our_team_words = our_team.split()
-    opponent_words = opponent.split()
-    rounds = len(our_team_words)
+def battle(our_team: str, opponent: str) -> str:
+    our_team_points_per_round = [points_for_word(word) for word in our_team.split()]
+    opponent_points_per_round = [points_for_word(word) for word in opponent.split()]
+
     our_team_wins = 0
     opponent_wins = 0
 
-    for round in range(rounds):
-        our_team_points_current_round = 0
-        opponent_points_current_round = 0
-
-        for char in our_team_words[round]:
-            our_team_points_current_round += points_for_letter(char)
-        for char in opponent_words[round]:
-            opponent_points_current_round += points_for_letter(char)
-        
-        if our_team_points_current_round > opponent_points_current_round:
+    for our_team_score, opponent_score in zip(our_team_points_per_round, opponent_points_per_round):
+        if our_team_score > opponent_score:
             our_team_wins += 1
-        elif opponent_points_current_round > our_team_points_current_round:
+        elif opponent_score > our_team_score:
             opponent_wins += 1
-
+    
     if our_team_wins > opponent_wins:
         return "We win"
     elif opponent_wins > our_team_wins:
         return "We lose"
     else:
         return "Draw"
+
+    
+
+# def battle(our_team: str, opponent: str) -> str : 
+#     our_team_words = our_team.split()
+#     opponent_words = opponent.split()
+#     rounds = len(our_team_words)
+#     our_team_wins = 0
+#     opponent_wins = 0
+
+#     for round in range(rounds):
+#         our_team_points_current_round = 0
+#         opponent_points_current_round = 0
+
+#         for char in our_team_words[round]:
+#             our_team_points_current_round += points_for_letter(char)
+#         for char in opponent_words[round]:
+#             opponent_points_current_round += points_for_letter(char)
+        
+#         if our_team_points_current_round > opponent_points_current_round:
+#             our_team_wins += 1
+#         elif opponent_points_current_round > our_team_points_current_round:
+#             opponent_wins += 1
+
+#     if our_team_wins > opponent_wins:
+#         return "We win"
+#     elif opponent_wins > our_team_wins:
+#         return "We lose"
+#     else:
+#         return "Draw"
 
             
 
