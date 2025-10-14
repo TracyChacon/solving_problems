@@ -57,9 +57,9 @@ def count(text: str, pattern: str) -> int:
 
 
 if __name__ == "__main__":
-    print(kmp_search("abcdefg","def"))
-    print(kmp_search("hello","world"))
-    print(kmp_search("mississippi","iss"))
-    print(kmp_search("she sells seashells by the seashore","sh"))
-    print(kmp_search("101010101010101010101","101"))
-    print(compute_lps_array("ababa"))
+    print(count("abcdefg","def"))
+    print(count("hello","world"))
+    print(count("mississippi","iss"))
+    print(count("she sells seashells by the seashore","sh"))
+    print(count("101010101010101010101","101"))
+    # print(compute_lps_array("ababa"))
