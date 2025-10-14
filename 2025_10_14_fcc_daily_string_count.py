@@ -23,34 +23,34 @@ def compute_lps_array(pattern: str) -> list[int]:
                 i += 1
     return lps
 
-def count(text: str, pattern: str) -> int:
-    print(f"text: {text}, pattern: {pattern}")
+def count(text: str, parameter: str) -> int:
+    print(f"text: {text}, parameter: {parameter}")
     text_length = len(text)
-    pattern_length = len(pattern)
+    parameter_length = len(parameter)
 
-    if pattern_length == 0:
+    if parameter_length == 0:
         return 0
-    if text_length < pattern_length:
+    if text_length < parameter_length:
         return 0
     
-    lps = compute_lps_array(pattern)
+    lps = compute_lps_array(parameter)
 
     text_itr = 0
-    pattern_itr = 0
+    parameter_itr = 0
     count = 0
 
     while text_itr < text_length:
-        if pattern[pattern_itr] == text[text_itr]:
+        if parameter[parameter_itr] == text[text_itr]:
             text_itr += 1
-            pattern_itr += 1
-        if pattern_itr == pattern_length:
+            parameter_itr += 1
+        if parameter_itr == parameter_length:
             count += 1
-            pattern_itr = lps[pattern_itr - 1]
-        elif i < text_length and pattern[pattern_itr] != text[text_itr]:
-            if pattern_itr != 0:
-                pattern_itr = lps[pattern_itr - 1]
+            parameter_itr = lps[parameter_itr - 1]
+        elif text_itr < text_length and parameter[parameter_itr] != text[text_itr]:
+            if parameter_itr != 0:
+                parameter_itr = lps[parameter_itr - 1]
             else:
-                i += 1
+                text_itr += 1
     return count
 
 
@@ -58,8 +58,8 @@ def count(text: str, pattern: str) -> int:
 
 if __name__ == "__main__":
     print(count("abcdefg","def"))
-    print(count("hello","world"))
-    print(count("mississippi","iss"))
-    print(count("she sells seashells by the seashore","sh"))
-    print(count("101010101010101010101","101"))
+    # print(count("hello","world"))
+    # print(count("mississippi","iss"))
+    # print(count("she sells seashells by the seashore","sh"))
+    # print(count("101010101010101010101","101"))
     # print(compute_lps_array("ababa"))
