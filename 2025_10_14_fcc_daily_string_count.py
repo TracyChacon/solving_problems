@@ -23,7 +23,7 @@ def compute_lps_array(pattern: str) -> list[int]:
                 i += 1
     return lps
 
-def kmp_search(text: str, pattern: str) -> int:
+def count(text: str, pattern: str) -> int:
     print(f"text: {text}, pattern: {pattern}")
     text_length = len(text)
     pattern_length = len(pattern)
@@ -35,20 +35,20 @@ def kmp_search(text: str, pattern: str) -> int:
     
     lps = compute_lps_array(pattern)
 
-    j = 0
-    i = 0
+    text_itr = 0
+    pattern_itr = 0
     count = 0
 
-    while i < text_length:
-        if pattern[j] == text[i]:
-            i += 1
-            j += 1
-        if j == pattern_length:
+    while text_itr < text_length:
+        if pattern[pattern_itr] == text[text_itr]:
+            text_itr += 1
+            pattern_itr += 1
+        if pattern_itr == pattern_length:
             count += 1
-            j = lps[j - 1]
-        elif i < text_length and pattern[j] != text[i]:
-            if j != 0:
-                j = lps[j - 1]
+            pattern_itr = lps[pattern_itr - 1]
+        elif i < text_length and pattern[pattern_itr] != text[text_itr]:
+            if pattern_itr != 0:
+                pattern_itr = lps[pattern_itr - 1]
             else:
                 i += 1
     return count
@@ -57,9 +57,9 @@ def kmp_search(text: str, pattern: str) -> int:
 
 
 if __name__ == "__main__":
-    # print(kmp_search("abcdefg","def"))
-    # print(kmp_search("hello","world"))
-    # print(kmp_search("mississippi","iss"))
-    # print(kmp_search("she sells seashells by the seashore","sh"))
-    # print(kmp_search("101010101010101010101","101"))
+    print(kmp_search("abcdefg","def"))
+    print(kmp_search("hello","world"))
+    print(kmp_search("mississippi","iss"))
+    print(kmp_search("she sells seashells by the seashore","sh"))
+    print(kmp_search("101010101010101010101","101"))
     print(compute_lps_array("ababa"))

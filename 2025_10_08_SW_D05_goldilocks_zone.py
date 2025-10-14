@@ -15,15 +15,15 @@
 def goldilocks_zone(mass: float) -> list[float]:
     MIN_STELLER_FLUX_VALUE = 0.95
     MAX_STELLER_FLUX_VALUE = 1.37
+    
     luminosity = mass**3.5
     sqrt_luminosity = luminosity**(1/2)
 
     habitable_zone_start = MIN_STELLER_FLUX_VALUE * sqrt_luminosity
     habitable_zone_end = MAX_STELLER_FLUX_VALUE * sqrt_luminosity
+
     
-    habitable_zone_distances = [round(habitable_zone_start, 2), round(habitable_zone_end, 2)]
-    
-    return habitable_zone_distances
+    return [round(habitable_zone_start, 2), round(habitable_zone_end, 2)]
     
     
 if __name__ == "__main__":
