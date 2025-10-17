@@ -10,7 +10,6 @@ import re
 CARD_PATTERN = re.compile(r'(\d{4}[\-\s]){3}\d{4}')
 
 def mask(card: str) -> str | None:
-    print(card)
     if not CARD_PATTERN.fullmatch(card):
         return None
     
