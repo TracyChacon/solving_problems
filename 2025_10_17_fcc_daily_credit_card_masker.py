@@ -5,22 +5,20 @@
 # Replace all numbers, except the last four, with an asterisk (*).
 # Leave the remaining characters unchanged.
 # For example, given "4012-8888-8888-1881" return "****-****-****-1881".
+import re
+
+CARD_PATTERN = re.compile(r'(\d{4}[\-\s]){3}\d{4}')
+
 def mask(card: str) -> str | None:
     print(card)
-    EXPECTED_STRING_LENGTH = 19
-
-    if len(card) != EXPECTED_STRING_LENGTH:
-        return "Invalid String"
+    if not CARD_PATTERN.fullmatch(card):
+        return None
     
     delimeter = card[4]
-    
-    if delimeter not in (' ', '-'):
-        return "Invalid delimiter"
-    
     last_four = card[15: 19]
-    mask = f"****{delimeter}****{delimeter}****{delimeter}"
+    masked = f"****{delimeter}****{delimeter}****{delimeter}"
 
-    return mask + last_four
+    return masked + last_four
 
 
     
