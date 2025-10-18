@@ -45,4 +45,4 @@ if __name__ == "__main__":
     # False
     # print(validate(".b@sh.rc"))
     # print(validate("git@commit@push.io"))
-    print(validate("X junk@domain.com Y"))
+    print(validate("X...junk@domain.com"))
