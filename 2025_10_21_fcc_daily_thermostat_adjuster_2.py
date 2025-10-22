@@ -11,7 +11,6 @@ def convert_temp_c_to_f(temp_c: float) -> float:
 
 def adjust_thermostat(current_f: float, target_c: float) -> str:
     target_f = convert_temp_c_to_f(target_c)
-    
     diff = target_f - current_f
 
     if current_f < target_f:
