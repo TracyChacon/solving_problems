@@ -11,13 +11,13 @@ def convert_temp_c_to_f(temp_c: float) -> float:
 
 def adjust_thermostat(current_f: float, target_c: float) -> str:
     target_f = convert_temp_c_to_f(target_c)
+    
+    diff = target_f - current_f
 
     if current_f < target_f:
-        heat_to_temp_f = target_f - current_f
-        return f"Heat: {heat_to_temp_f:.1f} degrees Fahrenheit"
+        return f"Heat: {diff:.1f} degrees Fahrenheit"
     elif current_f > target_f:
-        cool_to_temp_f = current_f - target_f
-        return f"Cool: {cool_to_temp_f:.1f} degrees Fahrenheit"
+        return f"Cool: {abs(diff):.1f} degrees Fahrenheit"
     else:
         return f"Hold"
      
