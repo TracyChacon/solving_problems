@@ -1,6 +1,7 @@
 """
-Given two integers (a number of rows and a number of columns), 
-return a matrix (an array of arrays) filled with zeros (0) of the given size.
+Matrix Builder
+
+Given two integers (a number of rows and a number of columns), return a matrix (an array of arrays) filled with zeros (0) of the given size.
 
 For example, given 2 and 3, return:
 
@@ -8,6 +9,8 @@ For example, given 2 and 3, return:
   [0, 0, 0],
   [0, 0, 0]
 ]
+
+
 """
 
 def build_matrix(rows: int, cols: int) -> list[list[int]]:
