@@ -1,4 +1,7 @@
-# For day six of Space Week, you will be given a date in the format "YYYY-MM-DD" and need to determine the phase of the moon for that day using the following rules:
+# For day six of Space Week, 
+# you will be given a date in the format "YYYY-MM-DD" 
+# and need to determine the phase of the moon 
+# for that day using the following rules:
 
 # Use a simplified lunar cycle of 28 days, divided into four equal phases:
 

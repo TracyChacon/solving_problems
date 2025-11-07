@@ -24,13 +24,14 @@ def get_weekday(date_string: str) -> str:
 
 # Tests
 
-# Test 1 should return Thursday.
-print(get_weekday("2025-11-06"))
-# Test 2 should return Friday.
-print(get_weekday("1999-12-31"))
-# Test 3 should return Saturday.
-print(get_weekday("1111-11-11"))
-# Test 4 should return Wednesday.
-print(get_weekday("2112-12-21"))
-# Test 5 should return Monday.
-print(get_weekday("2345-10-01"))
+if __name__ == "__main__":
+    # Test 1 should return Thursday.
+    print(get_weekday("2025-11-06"))
+    # Test 2 should return Friday.
+    print(get_weekday("1999-12-31"))
+    # Test 3 should return Saturday.
+    print(get_weekday("1111-11-11"))
+    # Test 4 should return Wednesday.
+    print(get_weekday("2112-12-21"))
+    # Test 5 should return Monday.
+    print(get_weekday("2345-10-01"))
