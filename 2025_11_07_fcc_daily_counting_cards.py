@@ -13,16 +13,27 @@
 #  the deck.
 
 
+######################################################
+#  Intuition for the problem
+# - Standard deck of cards has 52 cards. There are 52 
+#   cards to choose from. If a card is selected, one
+#   card is selected and now there are 51 cards to 
+#   choose from. There are now 51 cards to choose from,
+#   if a second card is selected 50 cards are left and
+#   and two cards have been selected.
+
+######################################################
+
 # print(f"5: {52/5 * 51/4 * 50/3 * 49/2 * 48/1}")
 # print(f"2: {52/2 * 51/1}")
 
 
 ######################################################
-# Naive 
-# Does not account for symmetry principle/optimization
-# Uses floating point arithmetic in loop. This can 
-# cause precision errors in programs for suffienctly 
-# large iterations
+# Naive implementation
+# - Does not account for symmetry principle/optimization
+# - Uses floating point arithmetic in loop. This can 
+#   cause precision errors in programs for suffienctly 
+#   large iterations
 ######################################################
 
 # def combinations(cards: int) -> int:
@@ -38,13 +49,20 @@
 
 #     return int(accumulator)
 
+
+
+
 ####################################################
 # Symmetry Optimization
+#  - Takes advantage of symmetry principle
+#  - Does not use floating point arithmetic in loop. This can 
+#    cause precision errors in programs for suffienctly 
+#    large iterations
 ####################################################
 import math
 
 
-def combinations(k: int) -> int:
+def combinations(cards: int) -> int:
     # A standard deck has 52 cards.
     DECK_SIZE = 52
   
@@ -52,19 +70,19 @@ def combinations(k: int) -> int:
     
     # 1. Symmetry Optimization: Calculate C(n, min(k, n-k))
     # This ensures the loop runs the fewest number of times.
-    k_optimized = min(k, n - k)
+    cards_optimized = min(cards, n - cards)
     
     # If k is 0 or 52, the combination is 1.
-    if k_optimized < 0:
+    if cards_optimized < 0:
         return 0
-    if k_optimized == 0:
+    if cards_optimized == 0:
         return 1
 
     numerator = 1
     denominator = 1
     
-    # Iterate k_optimized times, using pure integer multiplication.
-    for i in range(k_optimized):
+    # Iterate cards_optimized times, using pure integer multiplication.
+    for i in range(cards_optimized):
         # Numerator: n * (n-1) * ...
         numerator *= (n - i)
         # Denominator: k * (k-1) * ...
@@ -77,15 +95,17 @@ def combinations(k: int) -> int:
 
 ###############################################
 # pythonic
-###############################################
-import math
 
-def combinations(cards: int) -> int:
-    DECK_SIZE = 52
-    if cards < 0 or cards > DECK_SIZE:
-        return 0
+# - Uses built-in function
+###############################################
+# import math
+
+# def combinations(cards: int) -> int:
+#     DECK_SIZE = 52
+#     if cards < 0 or cards > DECK_SIZE:
+#         return 0
     
-    return math.comb(DECK_SIZE, cards)
+#     return math.comb(DECK_SIZE, cards)
 
 
 # Tests
