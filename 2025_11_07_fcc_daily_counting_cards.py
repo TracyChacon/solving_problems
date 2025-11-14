@@ -61,20 +61,25 @@
 ####################################################
 import math
 
-
+# Defines a function to calculate the number of cards from a standard 52-card deck.
 def combinations(cards: int) -> int:
     # A standard deck has 52 cards.
     DECK_SIZE = 52
   
     n = DECK_SIZE
     
-    # 1. Symmetry Optimization: Calculate C(n, min(k, n-k))
+    # ***The smaller k is the fewer steps required to iterate below 
+    # in the for loop *** You manipulate thie input to be the most efficient value
+    # so you can iterate less later. Symmetry Optimization: Calculate C(n, min(k, n-k))
     # This ensures the loop runs the fewest number of times.
+    # Choosing k items is mathematically identical to not choosing 
+    # the reamining n - k items. 
     cards_optimized = min(cards, n - cards)
     
-    # If k is 0 or 52, the combination is 1.
+    # If k is less than 0 , the combination is 0.
     if cards_optimized < 0:
         return 0
+    # If k is 0, the combination is 1.
     if cards_optimized == 0:
         return 1
 
