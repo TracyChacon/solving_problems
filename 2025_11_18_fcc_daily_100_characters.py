@@ -16,13 +16,14 @@ def one_hundred(chars: str) -> str:
     # print(100 % len(chars))
     return (chars * (100 // len(chars)) + chars[:100 % len(chars)])
  
-# Tests
 
-# test 1 should return "One hundred One hundred One hundred One hundred One hundred One hundred One hundred One hundred One ".
-print(one_hundred("One hundred "))
-# test 2 should return "freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeC".
-print(one_hundred("freeCodeCamp "))
-# test 3 should return "daily challenges daily challenges daily challenges daily challenges daily challenges daily challenge".
-print(one_hundred("daily challenges "))
-# test 4 should return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!".
-print(one_hundred("!"))
+# Tests
+if __name__ == '__main__':
+    # test 1 should return "One hundred One hundred One hundred One hundred One hundred One hundred One hundred One hundred One ".
+    print(one_hundred("One hundred "))
+    # test 2 should return "freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeCamp freeCodeC".
+    print(one_hundred("freeCodeCamp "))
+    # test 3 should return "daily challenges daily challenges daily challenges daily challenges daily challenges daily challenge".
+    print(one_hundred("daily challenges "))
+    # test 4 should return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!".
+    print(one_hundred("!"))
