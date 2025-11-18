@@ -52,17 +52,17 @@ def is_match(fingerprint_a: str, fingerprint_b: str) -> bool:
     return count * 10 <= len_a
 
 # Tests
-
-# Test 1 should return True.
-# print(is_match("helloworld", "helloworld"))
-# Test 2 should return False.
-# print(is_match("helloworld", "helloworlds"))
-# Test 3 should return True.
-# print(is_match("helloworld", "jelloworld"))
-# print(is_match("helloworlx", "jelloworlz"))
-# Test 4 should return True.
-# print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthelazydog"))
-# Test 5 should return True.
-# print(is_match("theslickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthehazydog"))
-# Test 7 should return False.
-print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthehazycat"))
+if __name__ == '__main__':
+    # Test 1 should return True.
+    # print(is_match("helloworld", "helloworld"))
+    # Test 2 should return False.
+    # print(is_match("helloworld", "helloworlds"))
+    # Test 3 should return True.
+    # print(is_match("helloworld", "jelloworld"))
+    # print(is_match("helloworlx", "jelloworlz"))
+    # Test 4 should return True.
+    # print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthelazydog"))
+    # Test 5 should return True.
+    # print(is_match("theslickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthehazydog"))
+    # Test 7 should return False.
+    print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthehazycat"))
