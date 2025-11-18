@@ -49,10 +49,7 @@ def is_match(fingerprint_a: str, fingerprint_b: str) -> bool:
     # => count * 100 / 10 <= 10 / 10 * len_a
     # => count * 10 <= 1 * len_a
     # => count * 10 <= len_a
-    if count * 10 <= len_a:
-        return True
-
-    return False
+    return count * 10 <= len_a
 
 # Tests
 
