@@ -62,10 +62,22 @@ def shift_array(arr: list, n: int) -> list[int]:
     shifted_list = arr[:]      
 
     for i in range(len(arr)):
-        # print(f"{i} {(i + 1 * n) % len(arr)}")
-        shift = (i + 1 * n * -1) % len(arr)
+        # Original line
+        # shift = (i + 1 * n * -1) % len(arr)
+        # Simplified for clarity
+        shift = (i - n) % len(arr)
+
         shifted_list[shift] = arr[i]
     return shifted_list
+
+# pythonic
+def shift_array_v01_00_01(arr: list, n: int) -> list[int]:
+    L = len(arr)
+    # First find the shift amount
+    k = n % L
+    # If the shift is 1, k = 1 and split after index 0: [1], [2, 3].
+    # The result is [2, 3] + [1]
+    return arr[k:] + arr[:k]
 
 # # Test 1 should return [2, 3, 1].
 print(shift_array([1, 2, 3], 1))
