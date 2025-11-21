@@ -61,20 +61,21 @@ def convert(heading: str) -> str:
         
     return output_str
 
+if __name__ == '__main__':
 
-# Tests
+    # Tests
 
-# Test 1 should return "<h1>My level 1 heading</h1>".
-print(convert("# My level 1 heading"))
-# Test 2 should return "Invalid format".
-# print(convert("My heading"))
-# Test 3 should return "<h5>My level 5 heading</h5>".
-print(convert("##### My level 5 heading"))
-# Test 4 should return "Invalid format".
-# print(convert("#My heading"))
-# Test 5 should return "<h3>My level 3 heading</h3>".
-print(convert("  ###  My level 3 heading"))
-# Test 6 should return "Invalid format".
-print(convert("####### My level 7 heading"))
-# Test 7 should return "<h2>My #2 heading</h2>".
-# print(convert("## My #2 heading"))
+    # Test 1 should return "<h1>My level 1 heading</h1>".
+    print(convert("# My level 1 heading"))
+    # Test 2 should return "Invalid format".
+    # print(convert("My heading"))
+    # Test 3 should return "<h5>My level 5 heading</h5>".
+    print(convert("##### My level 5 heading"))
+    # Test 4 should return "Invalid format".
+    # print(convert("#My heading"))
+    # Test 5 should return "<h3>My level 3 heading</h3>".
+    print(convert("  ###  My level 3 heading"))
+    # Test 6 should return "Invalid format".
+    print(convert("####### My level 7 heading"))
+    # Test 7 should return "<h2>My #2 heading</h2>".
+    # print(convert("## My #2 heading"))
