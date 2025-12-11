@@ -20,6 +20,9 @@
 
 # Here's one more example: given 1464, return "MCDLXIV" (1000 + (500 - 100) + 50 + 10 + (5 - 1)).
 
+######################################################################
+# Positional Lookup Solution
+######################################################################
 # Implements rules for conversion for all numbers 1 up to 3999
 def to_roman(num: int) -> str:
     if not 1 <= num <= 3999:
@@ -48,6 +51,9 @@ def to_roman(num: int) -> str:
 
     return "".join(roman_numeral)
 
+######################################################################
+# Traditional Greedy Solution
+######################################################################
 
 # def to_roman(num: int) -> str:
 #     # Key: Value, Value: Roman Symbol
