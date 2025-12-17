@@ -8,7 +8,7 @@
 #     Words are always separated by a single space.
 
 def title_case(title):
-    return " ".join([word.lower().capitalize() for word in title.split()])
+    return " ".join(word.lower().capitalize() for word in title.split())
 
 if __name__ == '__main__':
     # Tests
