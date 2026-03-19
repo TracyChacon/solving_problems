@@ -23,7 +23,7 @@ def convert_list_item(markdown: str) -> str:
 
     if match:
         text = match.group(1)
-        return f"<li>{text}<li/>"
+        return f"<li>{text}</li>"
     else:
         return 'Invalid format'
 

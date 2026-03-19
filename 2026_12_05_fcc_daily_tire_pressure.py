@@ -46,6 +46,7 @@
 ###########################################################################################
 # Refactored Code
 ###########################################################################################
+
 def tire_status(pressures_psi: list[float], range_bar: list[float]) -> list[str]:
     BAR_TO_PSI_FACTOR = 14.5038
     lower_bound_psi = range_bar[0] * BAR_TO_PSI_FACTOR

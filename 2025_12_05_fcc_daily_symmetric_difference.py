@@ -51,6 +51,7 @@ def difference(list_1: list, list_2: list) -> list:
             symmetric_difference_ordered_list.append(element)
             
     return symmetric_difference_ordered_list
+
 if __name__ == '__main__':
     # Tests
 

@@ -7,7 +7,7 @@
 #     Make all other letters in each word lowercase.
 #     Words are always separated by a single space.
 
-def title_case(title):
+def title_case(title: str) -> str:
     return " ".join(word.lower().capitalize() for word in title.split())
 
 if __name__ == '__main__':

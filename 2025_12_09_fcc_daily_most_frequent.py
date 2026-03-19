@@ -4,12 +4,16 @@
 
 #     There will always be a single most frequent element.
 
+
+######################################################################
+# Initial Code
+######################################################################
 # from typing import Any
 
-# def most_frequent(list: list) -> Any:
+# def most_frequent(arr: list[Any]) -> Any:
 #     frequency_counter = {}
 
-#     for element in list:
+#     for element in arr:
 #         if element not in frequency_counter:
 #             frequency_counter[element] = 1
 #         else:
@@ -18,20 +22,34 @@
 #     # print(f"frequency_counter: {frequency_counter}")
 #     return max(frequency_counter, key=frequency_counter.get)
 
+
+######################################################################
+# Later Code
+######################################################################
 from typing import Any
-from collections import Counter
 
-def most_frequent(list: list) -> Any:
-    frequency_counter = 
+def most_frequent(arr: list[Any]) -> Any:
+    frequency_counter = {}
 
-    for element in list:
-        if element not in frequency_counter:
-            frequency_counter[element] = 1
-        else:
-            frequency_counter[element] += 1
+    for element in arr:
+        frequency_counter[element] = frequency_counter.get(element, 0) + 1
 
     # print(f"frequency_counter: {frequency_counter}")
     return max(frequency_counter, key=frequency_counter.get)
+
+
+
+######################################################################
+# Pythonic
+######################################################################
+
+# from typing import Any
+# from collections import Counter
+
+# def most_frequent(arr: list[Any]) -> Any:
+#     frequency_counter = Counter(arr)
+
+#     return max(frequency_counter, key=frequency_counter.get)
 
 if __name__ == '__main__':
     # Tests

@@ -6,7 +6,7 @@
 #     1 mile equals 1.60934 kilometers.
 #     Round the result to two decimal places.
 
-def convert_to_km(miles: int | float) -> str:
+def convert_to_km(miles: int | float) -> int | float:
     KILOMETERS_PER_MILE = 1.60934
     
     # 1. Apply the mathematical precision requirement (round to 2 decimals)

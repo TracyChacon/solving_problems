@@ -20,21 +20,14 @@ def resolution_streak(days: list[list[int]]) -> str:
     for day, metrics in enumerate(days, 1):
         walk, screen_time, page_read = metrics
 
-        success = walk >= 10000 and screen_time < 120 and page_read >= 5
+        success = walk >= 10000 and screen_time <= 120 and page_read >= 5
 
         if success:
             streak += 1
         else:
             return f"Resolution failed on day {day}: {streak} day streak."
-    
 
     return f"Resolution on track: {streak} day streak."
-
-
-#     You walked at least 10,000 steps.
-#     You had no more than 120 minutes of screen time.
-#     You read at least five pages.
-    pass
 
 if __name__ == '__main__':
     # Tests
